@@ -2,7 +2,7 @@ from ppadb.client import Client as AdbClient
 import cv2
 import numpy as np
 
-# 1. ADB Connection
+
 client = AdbClient(host="127.0.0.1", port=5037)
 devices = client.devices()
 
@@ -10,7 +10,7 @@ if len(devices) == 0:
     print("Koi device nahi mila! Check USB Debugging.")
     exit()
 
-device = devices[0] # Pehla connected device uthayega
+device = devices[0] 
 
 print("Screen sharing start ho rahi hai... 'q' dabaye band karne ke liye.")
 
@@ -35,5 +35,6 @@ while True:
     # 'q' dabane par loop band hoga
     if cv2.waitKey(1) & 0xFF == ord('q'):
         break
+
 
 cv2.destroyAllWindows()
